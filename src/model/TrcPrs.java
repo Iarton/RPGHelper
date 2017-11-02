@@ -9,7 +9,7 @@ package model;
  *
  * @author Pc
  */
-public class NPC {
-    private String nome;
-    private String raça;
+public class TrcPrs {
+    private String tp;
+    private String dp;
 }
