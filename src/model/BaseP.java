@@ -13,11 +13,11 @@ import java.util.ArrayList;
  */
 public class BaseP {
     private String nome;
-    private String raça;
+    private Raça raça;
     private int cpl;
     private int imp;
     private String medo;
     private String objetivo;
-    private String rel;
+    private String rlg;
     private ArrayList<TrcPrs> Tp;
 }
