@@ -9,7 +9,6 @@ package model;
  *
  * @author Pc
  */
-public class TrcPrs {
-    private String tp;
-    private String dp;
+public class Raca_Religiao {
+    
 }

@@ -9,9 +9,6 @@ package model;
  *
  * @author Pc
  */
-public class Raça {
-       private String nome;
-       private String descricao;
-       private String passiva;
-       private Atributos atbBase;
+public class TP_Player {
+    
 }
