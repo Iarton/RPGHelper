@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Pc
@@ -15,6 +17,7 @@ public class Raca {
        private String passiva;
        private int pv;
        private Atributos atbBase;
+       private Raca_Religiao rcrl;
 
     public Raca(String nome, String descricao, String passiva, int pv) {
         this.nome = nome;
@@ -42,6 +45,15 @@ public class Raca {
     public Atributos getAtbBase() {
         return atbBase;
     }
-       
+
+    public Raca_Religiao getRcrl() {
+        return rcrl;
+    }
+
+    public void setRcrl(Raca_Religiao rcrl) {
+        this.rcrl = rcrl;
+    }
+      
+    
        
 }

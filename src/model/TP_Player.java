@@ -13,26 +13,20 @@ import java.util.ArrayList;
  */
 public class TP_Player {
     private Player player;
-    private ArrayList<TP> tp;
+    private ArrayList<TP> tps;
 
     public TP_Player(Player player) {
         this.player = player;
+        tps = new ArrayList<TP>();
+        player.setTpc(this);
     }
 
     public Player getPlayer() {
         return player;
     }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public ArrayList<TP> getTp() {
-        return tp;
-    }
-
-    public void setTp(ArrayList<TP> tp) {
-        this.tp = tp;
+    
+    public void addTp(TP tp){
+        tps.add(tp);
     }
     
     

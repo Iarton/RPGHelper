@@ -21,6 +21,7 @@ public class Player {
     private String objetivo;
     private Religiao rel;
     private String classe;
+    private TP_Player tpc;
 
     public Player(String nome, Raca raça, String classe) {
         this.nome = nome;
@@ -28,6 +29,15 @@ public class Player {
         this.classe = classe;
     }
 
+    public TP_Player getTpc() {
+        return tpc;
+    }
+
+    public void setTpc(TP_Player tpc) {
+        this.tpc = tpc;
+    }
+
+    
     public String getNome() {
         return nome;
     }

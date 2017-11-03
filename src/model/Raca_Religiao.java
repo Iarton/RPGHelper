@@ -17,14 +17,12 @@ public class Raca_Religiao {
 
     public Raca_Religiao(Raca raca) {
         this.raca = raca;
+        religiao = new ArrayList<Religiao>();
+        raca.setRcrl(this);
     }
 
     public Raca getRaca() {
         return raca;
-    }
-
-    public ArrayList<Religiao> getReligiao() {
-        return religiao;
     }
     
     
