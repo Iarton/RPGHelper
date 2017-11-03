@@ -21,6 +21,11 @@ public class TP_Player {
         player.setTpc(this);
     }
 
+    public ArrayList<TP> getTps() {
+        return tps;
+    }
+
+    
     public Player getPlayer() {
         return player;
     }

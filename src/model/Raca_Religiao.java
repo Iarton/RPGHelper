@@ -21,9 +21,17 @@ public class Raca_Religiao {
         raca.setRcrl(this);
     }
 
+    public ArrayList<Religiao> getReligiao() {
+        return religiao;
+    }
+    
+    
+
     public Raca getRaca() {
         return raca;
     }
     
-    
+    public void addReligiao(Religiao reg){
+        this.religiao.add(reg);
+    }
 }

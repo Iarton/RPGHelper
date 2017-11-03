@@ -13,12 +13,14 @@ public class TP {
     private String tp;
     private String desctp;
 
-    public String getTp() {
-        return tp;
+    public TP(String tp) {
+        this.tp = tp;
     }
 
-    public void setTp(String tp) {
-        this.tp = tp;
+    
+    
+    public String getTp() {
+        return tp;
     }
 
     public String getDesctp() {

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Player {
     private String nome;
-    private Raca raça;
+    private Raca raca;
     private int cpl;
     private int imp;
     private int rlg;
@@ -25,7 +25,7 @@ public class Player {
 
     public Player(String nome, Raca raça, String classe) {
         this.nome = nome;
-        this.raça = raça;
+        this.raca = raça;
         this.classe = classe;
     }
 
@@ -42,8 +42,8 @@ public class Player {
         return nome;
     }
 
-    public Raca getRaça() {
-        return raça;
+    public Raca getRaca() {
+        return raca;
     }
 
     public int getCpl() {
