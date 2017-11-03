@@ -5,10 +5,27 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Pc
  */
 public class Raca_Religiao {
+    private Raca raca;
+    private ArrayList<Religiao> religiao;
+
+    public Raca_Religiao(Raca raca) {
+        this.raca = raca;
+    }
+
+    public Raca getRaca() {
+        return raca;
+    }
+
+    public ArrayList<Religiao> getReligiao() {
+        return religiao;
+    }
+    
     
 }

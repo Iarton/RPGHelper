@@ -16,8 +16,78 @@ public class Player {
     private Raca raça;
     private int cpl;
     private int imp;
+    private int rlg;
     private String medo;
     private String objetivo;
-    private String rlg;
-    private ArrayList<TP> Tp;
+    private Religiao rel;
+    private String classe;
+
+    public Player(String nome, Raca raça, String classe) {
+        this.nome = nome;
+        this.raça = raça;
+        this.classe = classe;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Raca getRaça() {
+        return raça;
+    }
+
+    public int getCpl() {
+        return cpl;
+    }
+
+    public int getImp() {
+        return imp;
+    }
+
+    public int getRlg() {
+        return rlg;
+    }
+
+    public String getMedo() {
+        return medo;
+    }
+
+    public String getObjetivo() {
+        return objetivo;
+    }
+
+    public Religiao getRel() {
+        return rel;
+    }
+
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setCpl(int cpl) {
+        this.cpl = cpl;
+    }
+
+    public void setImp(int imp) {
+        this.imp = imp;
+    }
+
+    public void setRlg(int rlg) {
+        this.rlg = rlg;
+    }
+
+    public void setMedo(String medo) {
+        this.medo = medo;
+    }
+
+    public void setObjetivo(String objetivo) {
+        this.objetivo = objetivo;
+    }
+
+    public void setRel(Religiao rel) {
+        this.rel = rel;
+    }
+    
+    
+    
 }

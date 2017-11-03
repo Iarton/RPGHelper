@@ -11,5 +11,23 @@ package model;
  */
 public class TP {
     private String tp;
-    private String dp;
+    private String desctp;
+
+    public String getTp() {
+        return tp;
+    }
+
+    public void setTp(String tp) {
+        this.tp = tp;
+    }
+
+    public String getDesctp() {
+        return desctp;
+    }
+
+    public void setDesctp(String desctp) {
+        this.desctp = desctp;
+    }
+    
+    
 }
