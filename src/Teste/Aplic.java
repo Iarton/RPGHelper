@@ -5,6 +5,7 @@
  */
 package Teste;
 
+import model.Atributos;
 import model.Player;
 import model.Raca;
 import model.Raca_Religiao;
@@ -32,17 +33,20 @@ public class Aplic {
         raca_reg.addReligiao(reg);
         
         TP tp= new TP("Nervos");
-        
         Player p = new Player("Eu",raca,"Mago");
         
         TP_Player tppl = new TP_Player(p);
         
         tppl.addTp(tp);
         
+        raca.getAtbBase().setAg(1);
+        
+        
         System.out.println("Nome: "+p.getNome());
         System.out.println("Raça: "+p.getRaca().getNome());
         System.out.println("TP: "+p.getTpc().getTps().get(0).getTp());
         System.out.println("Religiao: "+p.getRaca().getRcrl().getReligiao().get(0).getNome());
+        System.out.println("AG = "+ raca.getAtbBase().getAg());
     }
     
 }

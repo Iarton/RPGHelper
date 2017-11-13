@@ -22,6 +22,7 @@ public class Raca {
         this.descricao = descricao;
         this.passiva = passiva;
         this.pv = pv;
+        atbBase = new Atributos();
     }
 
     public String getNome() {
