@@ -17,11 +17,17 @@ public class Player {
     private int cpl;
     private int imp;
     private int rlg;
+    private int idade;
+    private String BackGround;
+    //Objetivo temporario
+    private int ouro;
+    private int ph;
     private String medo;
     private String objetivo;
     private Religiao rel;
     private String classe;
     private TP_Player tpc;
+    private Atributos atb;
 
     public Player(String nome, Raca raça, String classe) {
         this.nome = nome;
@@ -96,6 +102,46 @@ public class Player {
 
     public void setRel(Religiao rel) {
         this.rel = rel;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public String getBackGround() {
+        return BackGround;
+    }
+
+    public void setBackGround(String BackGround) {
+        this.BackGround = BackGround;
+    }
+
+    public int getOuro() {
+        return ouro;
+    }
+
+    public void setOuro(int ouro) {
+        this.ouro = ouro;
+    }
+
+    public int getPh() {
+        return ph;
+    }
+
+    public void setPh(int ph) {
+        this.ph = ph;
+    }
+
+    public Atributos getAtb() {
+        return atb;
+    }
+
+    public void setAtb(Atributos atb) {
+        this.atb = atb;
     }
     
     
