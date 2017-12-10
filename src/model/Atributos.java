@@ -10,7 +10,7 @@ package model;
  * @author Pc
  */
 public class Atributos {
-    private int fç;
+    private int fc;
     private int ag;
     private int rs;
     private int cr;
@@ -21,12 +21,12 @@ public class Atributos {
     private int pc;
     private int pr;
 
-    public int getFç() {
-        return fç;
+    public int getFc() {
+        return fc;
     }
 
-    public void setFç(int fç) {
-        this.fç = fç;
+    public void setFc(int fc) {
+        this.fc = fc;
     }
 
     public int getAg() {

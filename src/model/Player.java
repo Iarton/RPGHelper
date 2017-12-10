@@ -26,6 +26,7 @@ public class Player {
     private String objetivo;
     private Religiao rel;
     private String classe;
+    private String LocalNasc;
     private TP_Player tpc;
     private Atributos atb;
 
