@@ -10,11 +10,20 @@ package model;
  * @author Pc
  */
 public class TP {
+    private int num;
     private String tp;
     private String desctp;
 
     public TP(String tp) {
         this.tp = tp;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
     }
 
     

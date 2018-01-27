@@ -5,6 +5,11 @@
  */
 package view;
 
+import control.Conexao;
+import control.DaoTP;
+import javax.swing.JOptionPane;
+import model.TP;
+
 /**
  *
  * @author Pc
@@ -36,6 +41,11 @@ public class frmCriarTps extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -45,6 +55,11 @@ public class frmCriarTps extends javax.swing.JFrame {
         });
 
         btnCriar.setText("Criar");
+        btnCriar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Nome");
 
@@ -73,7 +88,7 @@ public class frmCriarTps extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addComponent(txtNome))
-                        .addGap(0, 11, Short.MAX_VALUE)))
+                        .addGap(0, 9, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -90,10 +105,10 @@ public class frmCriarTps extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar)
-                    .addComponent(btnCriar))
+                    .addComponent(btnCriar)
+                    .addComponent(btnCancelar))
                 .addContainerGap())
         );
 
@@ -105,7 +120,25 @@ public class frmCriarTps extends javax.swing.JFrame {
         frmMenu fmn = new frmMenu ();
         fmn.setVisible(true);
         this.dispose();
+        conexao.fecharConexao();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        conexao = new Conexao("Airton","123");
+        conexao.setDriver("oracle.jdbc.OracleDriver");
+        conexao.setConnectionString("jdbc:oracle:thin:@localhost:1521:XE");
+        daotp = new DaoTP(conexao.conectar());
+    }//GEN-LAST:event_formWindowOpened
+
+    private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
+       try{
+           tp = new TP(txtNome.getText());
+       tp.setDesctp(txtaDesc.getText());
+       daotp.criar(tp);
+       }catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.toString(), "Erro na operação", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnCriarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,4 +184,8 @@ public class frmCriarTps extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextArea txtaDesc;
     // End of variables declaration//GEN-END:variables
+    private Conexao conexao = null;
+    private DaoTP daotp = null;
+    private TP tp = null;
+
 }
