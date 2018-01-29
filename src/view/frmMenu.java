@@ -27,7 +27,7 @@ public class frmMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCR = new javax.swing.JButton();
+        btnEATP = new javax.swing.JButton();
         btnCTp = new javax.swing.JButton();
         btnCRel = new javax.swing.JButton();
         btnCF = new javax.swing.JButton();
@@ -35,10 +35,10 @@ public class frmMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
 
-        btnCR.setText("Criar Raça");
-        btnCR.addActionListener(new java.awt.event.ActionListener() {
+        btnEATP.setText("Excluir/ALterar TP");
+        btnEATP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCRActionPerformed(evt);
+                btnEATPActionPerformed(evt);
             }
         });
 
@@ -67,9 +67,9 @@ public class frmMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCRel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEATP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCTp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(174, 174, 174))
         );
@@ -83,7 +83,7 @@ public class frmMenu extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCRel)
-                    .addComponent(btnCR))
+                    .addComponent(btnEATP))
                 .addContainerGap(144, Short.MAX_VALUE))
         );
 
@@ -91,9 +91,11 @@ public class frmMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCRActionPerformed
+    private void btnEATPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEATPActionPerformed
+        frmExcluirAlterar fea = new frmExcluirAlterar();
+        fea.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnEATPActionPerformed
 
     private void btnCFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCFActionPerformed
         // TODO add your handling code here:
@@ -142,8 +144,8 @@ public class frmMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCF;
-    private javax.swing.JButton btnCR;
     private javax.swing.JButton btnCRel;
     private javax.swing.JButton btnCTp;
+    private javax.swing.JButton btnEATP;
     // End of variables declaration//GEN-END:variables
 }

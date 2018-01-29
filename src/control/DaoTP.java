@@ -38,10 +38,11 @@ public class DaoTP {
     }
 
     public ArrayList<TP> consultar() {
-        TP tp = null;
+        TP tp;
         int ntps = 0;
         PreparedStatement ps = null;
         ArrayList<TP> listatp = null;
+        listatp = new ArrayList<TP>(); 
         try {
             ps = conn.prepareStatement("SELECT count(*) FROM tp");
             ResultSet rs = ps.executeQuery();

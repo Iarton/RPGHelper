@@ -30,9 +30,9 @@
                   <Component id="btnCF" max="32767" attributes="0"/>
                   <Component id="btnCRel" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="189" max="32767" attributes="0"/>
+              <EmptySpace pref="153" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnCR" max="32767" attributes="0"/>
+                  <Component id="btnEATP" max="32767" attributes="0"/>
                   <Component id="btnCTp" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
@@ -50,7 +50,7 @@
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnCRel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCR" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEATP" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="144" max="32767" attributes="0"/>
           </Group>
@@ -58,12 +58,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnCR">
+    <Component class="javax.swing.JButton" name="btnEATP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Criar Ra&#xe7;a"/>
+        <Property name="text" type="java.lang.String" value="Excluir/ALterar TP"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCRActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEATPActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCTp">
