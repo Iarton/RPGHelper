@@ -84,5 +84,19 @@ public class DaoTP {
             System.out.println(ex.toString());
         }
     }
+    
+    public void alterar(TP tp) {
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement("update tp set nome = ?, descri = ? where codtp = ?");
+            ps.setString(1, tp.getTp());
+            ps.setString(2, tp.getDesctp());
+            ps.setString(3, String.valueOf(tp.getNum()));
+            ps.execute();
+
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+    }
 
 }
