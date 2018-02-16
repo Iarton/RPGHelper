@@ -21,6 +21,7 @@ public class frmExcluirAlterar extends javax.swing.JFrame {
      * Creates new form frmExcluirAlterar
      */
     ArrayList<TP> listaTP;
+
     public frmExcluirAlterar() {
         initComponents();
     }
@@ -44,7 +45,7 @@ public class frmExcluirAlterar extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -82,6 +83,11 @@ public class frmExcluirAlterar extends javax.swing.JFrame {
         });
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,52 +144,67 @@ public class frmExcluirAlterar extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        conexao = new Conexao("Airton","123");
+        conexao = new Conexao("Airton", "123");
         conexao.setDriver("oracle.jdbc.OracleDriver");
         conexao.setConnectionString("jdbc:oracle:thin:@localhost:1521:XE");
         daotp = new DaoTP(conexao.conectar());
-        
+
         listaTP = daotp.consultar();
-        for(int c = 0;c < listaTP.size();c++){
+        for (int c = 0; c < listaTP.size(); c++) {
             cmbTp.addItem(listaTP.get(c).getTp());
         }
         cmbTp.setSelectedIndex(1);
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        frmMenu fmn = new frmMenu ();
+        frmMenu fmn = new frmMenu();
         fmn.setVisible(true);
-        this.dispose();
         conexao.fecharConexao();
+        this.dispose();
     }//GEN-LAST:event_formWindowClosing
 
     private void cmbTpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTpActionPerformed
-        txtTPnome.setText(listaTP.get(cmbTp.getSelectedIndex()-1).getTp());
-        txtTpDesc.setText(listaTP.get(cmbTp.getSelectedIndex()-1).getDesctp());
+        if (listaTP.isEmpty() == false && cmbTp.getItemCount() > 0) {
+            txtTPnome.setText(listaTP.get(cmbTp.getSelectedIndex() - 1).getTp());
+            txtTpDesc.setText(listaTP.get(cmbTp.getSelectedIndex() - 1).getDesctp());
+        }
     }//GEN-LAST:event_cmbTpActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        frmMenu fmn = new frmMenu ();
+        frmMenu fmn = new frmMenu();
         fmn.setVisible(true);
-        this.dispose();
         conexao.fecharConexao();
+        this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        TP tpc;
-        tpc = listaTP.get(cmbTp.getSelectedIndex()-1);
-        listaTP.removeAll(listaTP);
+        TP tpc = new TP(txtTPnome.getText());
+        tpc.setDesctp(txtTpDesc.getText());
+        tpc.setNum(listaTP.get(cmbTp.getSelectedIndex() - 1).getNum());
+        cmbTp.;
         daotp.alterar(tpc);
-        cmbTp.removeAllItems();
-        listaTP = daotp.consultar();
-        for(int c = 0;c < listaTP.size();c++){
-            cmbTp.addItem(listaTP.get(c).getTp());
-        }
+        listaTP.set(cmbTp.getSelectedIndex() - 1, tpc);
         cmbTp.setSelectedIndex(1);
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        int loc = cmbTp.getSelectedIndex();
+        System.out.println(loc);
+        TP tpc = new TP(txtTPnome.getText());
+        tpc.setNum(listaTP.get(loc - 1).getNum());
+        daotp.excluir(tpc);
+        listaTP.remove(loc - 1);
+        cmbTp.setSelectedIndex(1);
+        cmbTp.removeItemAt(loc);
+        if(cmbTp.getItemCount()==0){
+            txtTPnome.setText("");
+            txtTpDesc.setText("");
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,7 +253,7 @@ public class frmExcluirAlterar extends javax.swing.JFrame {
     private javax.swing.JTextField txtTpDesc;
     // End of variables declaration//GEN-END:variables
 private Conexao conexao = null;
-private DaoTP daotp = null;
-private TP tp = null;
+    private DaoTP daotp = null;
+    private TP tp = null;
 
 }
